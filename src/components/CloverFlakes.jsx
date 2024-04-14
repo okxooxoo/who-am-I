@@ -11,7 +11,7 @@ function CloverFlakes() {
     useState(() => {
         const newCloverFlake = Array.from({ length: CLOVER_COUNT }).map(() => {
             const left = Math.floor(Math.random() * 101);
-            const fallDelay = Math.random() * 3;
+            const fallDelay = Math.random() * 4;
             const rotateAngle = Math.floor(Math.random() * 361);
 
             return {
