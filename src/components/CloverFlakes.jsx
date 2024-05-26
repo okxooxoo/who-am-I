@@ -1,8 +1,6 @@
-//import { generateRandomNumber } from '@utils/math';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Clover from './Clover';
-import Github from './Github';
 
 function CloverFlakes() {
     const CLOVER_COUNT = 50;
@@ -28,7 +26,6 @@ function CloverFlakes() {
             {cloverFlake.map(({left, fallDelay, rotateAngle}) =>
                 <Clover left={left} fallDelay={fallDelay} rotateAngle={rotateAngle} />
             )}
-            <Github left={70} fallDelay={3} rotateAngle={0} />
         </CloverFlakeLayout>
     );
 }
