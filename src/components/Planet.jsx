@@ -109,8 +109,8 @@ const BasePlanet = styled.div`
     background-color: white;
     border-radius: 200px;
     border: 1px solid black;
-    transition: transform 0.5s ease;
-    /* animation: ${rotation} 20s linear infinite; */
+    /* transition: transform 0.5s ease; */
+    animation: ${rotation} 20s linear infinite;
 `;
 
 const FirstPlanet = styled(BasePlanet)`
