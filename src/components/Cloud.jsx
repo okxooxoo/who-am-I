@@ -24,7 +24,7 @@ const CloudLayout = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(cloud.png);
+    background-image: url(${process.env.PUBLIC_URL}/cloud.png);
     background-size: 680px;
     background-position: center;
     background-repeat: no-repeat;

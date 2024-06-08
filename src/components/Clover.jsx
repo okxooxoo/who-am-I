@@ -29,7 +29,7 @@ const CloverLayout = styled.div`
 `;
 
 const CloverImg = styled.div`
-    background-image: url(clover.png);
+    background-image: url(${process.env.PUBLIC_URL}/clover.png);
     background-size: cover;
     width: 50px;
     height: 50px;

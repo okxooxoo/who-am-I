@@ -93,8 +93,8 @@ const Orbit = styled.div`
 
 const CenterPlanet = styled.div`
     position: fixed;
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 240px;
     background-color: white;
     border-radius: 200px;
     border: 1px solid black;
@@ -102,8 +102,8 @@ const CenterPlanet = styled.div`
 
 const BasePlanet = styled.div`
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background-repeat: no-repeat;
     background-position: center;
     background-color: white;
@@ -114,28 +114,28 @@ const BasePlanet = styled.div`
 `;
 
 const FirstPlanet = styled(BasePlanet)`
-    left: calc(90px + 280px * cos(120deg));
-    top: calc(90px + 280px * sin(120deg));
-    background-image: url(github.png);
+    left: calc(100px + 260px * cos(120deg));
+    top: calc(100px + 260px * sin(120deg));
+    background-image: url(${process.env.PUBLIC_URL}/github.png);
     background-size: 70%;
 `;
 
 const SecondPlanet = styled(BasePlanet)`
-    left: calc(90px + 280px * cos(240deg));
-    top: calc(90px + 280px * sin(240deg));
-    background-image: url(velog.png);
+    left: calc(100px + 260px * cos(240deg));
+    top: calc(100px + 260px * sin(240deg));
+    background-image: url(${process.env.PUBLIC_URL}/velog.png);
     background-size: 50%;
 `;
 
 const ThirdPlanet = styled(BasePlanet)`
-    left: calc(90px + 280px * cos(360deg));
-    top: calc(90px + 280px * sin(360deg));
-    background-image: url(blog.png);
+    left: calc(100px + 260px * cos(360deg));
+    top: calc(100px + 260px * sin(360deg));
+    background-image: url(${process.env.PUBLIC_URL}/blog.png);
     background-size: 60%;
 `;
 
 const CenterText = styled.div`
-    font-size: 36px;
+    font-size: 34px;
     animation: ${rotation} 20s linear infinite;
 `;
 

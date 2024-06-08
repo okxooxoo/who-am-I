@@ -39,11 +39,11 @@ const ProjectLayout = styled.div`
 const VinPong = styled.div`
     width: 300px;
     height: 300px;
-    background-image: url(vinpong.png);
+    background-image: url(${process.env.PUBLIC_URL}/vinpong.png);
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20px;
-    border: 1.5px solid #90B391;
+    border: 1px solid #90B391;
     margin: 20px;
     transition: transform 0.5s ease;
 `;
@@ -51,11 +51,11 @@ const VinPong = styled.div`
 const Saekam = styled.div`
     width: 300px;
     height: 300px;
-    background-image: url(saekam.png);
+    background-image: url(${process.env.PUBLIC_URL}/saekam.png);
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20px;
-    border: 1.5px solid #2096F3;
+    border: 1px solid #2096F3;
     margin: 20px;
     transition: transform 0.5s ease;
 `;
