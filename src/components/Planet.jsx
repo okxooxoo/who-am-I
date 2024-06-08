@@ -7,12 +7,14 @@ function Planet() {
     const velog = useRef(null);
     const blog = useRef(null);
 
-    const handlePlanetEnter = (keyword) => {
+    const handlePlanetEnter = (keyword, ref) => {
         setKeyword(keyword);
+        ref.current.style.transform = 'scale(1.1)';
     };
 
-    const handlePlanetLeave = () => {
+    const handlePlanetLeave = (ref) => {
         setKeyword('');
+        ref.current.style.transform = 'scale(1)';
     };
 
     const handlePlanetClick = (url) => {
@@ -28,20 +30,20 @@ function Planet() {
                 </CenterText>
                 <FirstPlanet
                     ref={github}
-                    onMouseEnter={() => handlePlanetEnter('성장')}
-                    onMouseLeave={handlePlanetLeave}
+                    onMouseEnter={() => handlePlanetEnter('지속적인 성장', github)}
+                    onMouseLeave={() => handlePlanetLeave(github)}
                     onClick={() => handlePlanetClick('https://github.com/okxooxoo')}
                 />
                 <SecondPlanet
                     ref={velog}
-                    onMouseEnter={() => handlePlanetEnter('기록')}
-                    onMouseLeave={handlePlanetLeave}
+                    onMouseEnter={() => handlePlanetEnter('기록하는 습관', velog)}
+                    onMouseLeave={() => handlePlanetLeave(velog)}
                     onClick={() => handlePlanetClick('https://velog.io/@okxooxoo')}
                 />
                 <ThirdPlanet
                     ref={blog}
-                    onMouseEnter={() => handlePlanetEnter('성찰')}
-                    onMouseLeave={handlePlanetLeave}
+                    onMouseEnter={() => handlePlanetEnter('회고와 성찰', blog)}
+                    onMouseLeave={() => handlePlanetLeave(blog)}
                     onClick={() => handlePlanetClick('https://blog.naver.com/okxooxoo')}
                 />
             </Orbit>
@@ -50,7 +52,7 @@ function Planet() {
 }
 
 // 공전
-const revolve = keyframes`
+const revolving = keyframes`
     0% {
         transform: rotate(360deg);
     }
@@ -59,7 +61,7 @@ const revolve = keyframes`
     }
 `;
 // 자전
-const rotate = keyframes`
+const rotation = keyframes`
     0% {
         transform: rotate(0deg);
     }
@@ -86,7 +88,7 @@ const Orbit = styled.div`
     align-items: center;
     width: 300px;
     height: 300px;
-    animation: ${revolve} 20s linear infinite;
+    animation: ${revolving} 20s linear infinite;
 `;
 
 const CenterPlanet = styled.div`
@@ -98,56 +100,43 @@ const CenterPlanet = styled.div`
     border: 1px solid black;
 `;
 
-const FirstPlanet = styled.div`
+const BasePlanet = styled.div`
     position: absolute;
-    top: -180px;
     width: 120px;
     height: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border-radius: 200px;
+    border: 1px solid black;
+    transition: transform 0.5s ease;
+    animation: ${rotation} 20s linear infinite;
+`;
+
+const FirstPlanet = styled(BasePlanet)`
+    left: calc(90px + 280px * cos(120deg));
+    top: calc(90px + 280px * sin(120deg));
     background-image: url(github.png);
     background-size: 70%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
-    border-radius: 200px;
-    border: 1px solid black;
-    animation: ${rotate} 20s linear infinite;
 `;
 
-const SecondPlanet = styled.div`
-    position: absolute;
-    left: 280px;
-    top: 300px;
-    width: 120px;
-    height: 120px;
+const SecondPlanet = styled(BasePlanet)`
+    left: calc(90px + 280px * cos(240deg));
+    top: calc(90px + 280px * sin(240deg));
     background-image: url(velog.png);
     background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
-    border-radius: 200px;
-    border: 1px solid black;
-    animation: ${rotate} 20s linear infinite;
 `;
 
-const ThirdPlanet = styled.div`
-    position: absolute;
-    left: -180px;
-    top: 140px;
-    width: 120px;
-    height: 120px;
+const ThirdPlanet = styled(BasePlanet)`
+    left: calc(90px + 280px * cos(360deg));
+    top: calc(90px + 280px * sin(360deg));
     background-image: url(blog.png);
     background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
-    border-radius: 200px;
-    border: 1px solid black;
-    animation: ${rotate} 20s linear infinite;
 `;
 
 const CenterText = styled.div`
     font-size: 36px;
-    animation: ${rotate} 20s linear infinite;
+    animation: ${rotation} 20s linear infinite;
 `;
 
 export default Planet;
