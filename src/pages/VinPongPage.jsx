@@ -12,6 +12,12 @@ function VinPongPage() {
                     빈티지핑퐁
                 </VinPongTitle>
                 <VinPongText>
+                    원하는 스타일의 옷을 쉽게 찾고
+                </VinPongText>
+                <VinPongText>
+                    SNS와 채팅 기능을 더한
+                </VinPongText>
+                <VinPongText>
                     의류 중고 거래 모바일 앱 
                 </VinPongText>
                 <VinPongText>

@@ -6,6 +6,7 @@ import Cloud from '../components/Cloud';
 import Planet from '../components/Planet';
 import Project from '../components/Project';
 import VinPongPage from './VinPongPage';
+import SaekamPage from './SaekamPage';
 
 function Home() {
     const circle = useRef();
@@ -16,6 +17,7 @@ function Home() {
             'SecondSection',
             'ThirdSection',
             'VinPongSection',
+            'SaekamSection',
         ],
     };
 
@@ -63,6 +65,9 @@ function Home() {
                 </Section>
                 <Section>
                     <VinPongPage />
+                </Section>
+                <Section>
+                    <SaekamPage />
                 </Section>
             </SectionsContainer>
         </HomeLayout>
