@@ -15,7 +15,7 @@ function Project() {
 
     const handleProjectClick = (str) => {
         if (str === 'vinpong')
-            window.location.href = `${process.env.PUBLIC_URL}/vinpong#FirstSection`;
+            window.location.href = `${process.env.PUBLIC_URL}#VinPongSection`;
         if (str === 'saekam')
             alert('준비 중입니다!');
     };

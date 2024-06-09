@@ -5,12 +5,13 @@ import CloverFlakes from '../components/CloverFlakes';
 import Cloud from '../components/Cloud';
 import Planet from '../components/Planet';
 import Project from '../components/Project';
+import VinPongPage from './VinPongPage';
 
 function Home() {
     const circle = useRef();
 
     const options = {
-        anchors: ['FirstSection', 'SecondSection', 'ThirdSection'],
+        anchors: ['FirstSection', 'SecondSection', 'ThirdSection', 'VinPongSection'],
     };
 
     useEffect(() => {
@@ -54,6 +55,9 @@ function Home() {
                 </Section>
                 <Section>
                     <Project />
+                </Section>
+                <Section>
+                    <VinPongPage />
                 </Section>
             </SectionsContainer>
         </HomeLayout>
