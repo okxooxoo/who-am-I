@@ -15,6 +15,7 @@ function Project() {
 
     const handleProjectClick = (str) => {
         if (str === 'vinpong')
+            // alert('아래로 스크롤 해주세요!\n(배포 시 발생하는 버그로 인해 클릭이 원활하게 동작하지 않습니다 🥲)');
             window.location.href = `${process.env.PUBLIC_URL}#VinPongSection`;
         if (str === 'saekam')
             alert('준비 중입니다!');

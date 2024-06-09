@@ -11,7 +11,12 @@ function Home() {
     const circle = useRef();
 
     const options = {
-        anchors: ['FirstSection', 'SecondSection', 'ThirdSection', 'VinPongSection'],
+        anchors: [
+            'FirstSection',
+            'SecondSection',
+            'ThirdSection',
+            'VinPongSection',
+        ],
     };
 
     useEffect(() => {
