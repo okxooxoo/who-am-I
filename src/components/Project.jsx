@@ -13,17 +13,26 @@ function Project() {
         ref.current.style.transform = 'scale(1)';
     };
 
+    const handleProjectClick = (str) => {
+        if (str === 'vinpong')
+            window.location.href = `${process.env.PUBLIC_URL}/vinpong`;
+        if (str === 'saekam')
+            alert('준비 중입니다!');
+    };
+
     return (
         <ProjectLayout>
             <VinPong
                 ref={vinpong}
                 onMouseEnter={() => handleProjectEnter(vinpong)}
                 onMouseLeave={() => handleProjectLeave(vinpong)}
+                onClick={() => handleProjectClick('vinpong')}
             />
             <Saekam
                 ref={saekam}
                 onMouseEnter={() => handleProjectEnter(saekam)}
                 onMouseLeave={() => handleProjectLeave(saekam)}
+                onClick={() => handleProjectClick('saekam')}
             />
         </ProjectLayout>
     );

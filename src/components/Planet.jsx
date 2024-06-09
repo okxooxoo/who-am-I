@@ -3,18 +3,30 @@ import styled, { keyframes } from 'styled-components';
 
 function Planet() {
     const [keyword, setKeyword] = useState('');
+    const orbit = useRef(null);
     const github = useRef(null);
     const velog = useRef(null);
     const blog = useRef(null);
+    const centerText = useRef(null);
 
     const handlePlanetEnter = (keyword, ref) => {
         setKeyword(keyword);
         ref.current.style.transform = 'scale(1.1)';
+        github.current.style.animationPlayState = 'paused';
+        velog.current.style.animationPlayState = 'paused';
+        blog.current.style.animationPlayState = 'paused';
+        orbit.current.style.animationPlayState = 'paused';
+        centerText.current.style.animationPlayState = 'paused';
     };
 
     const handlePlanetLeave = (ref) => {
         setKeyword('');
         ref.current.style.transform = 'scale(1)';
+        github.current.style.animationPlayState = 'running';
+        velog.current.style.animationPlayState = 'running';
+        blog.current.style.animationPlayState = 'running';
+        orbit.current.style.animationPlayState = 'running';
+        centerText.current.style.animationPlayState = 'running';
     };
 
     const handlePlanetClick = (url) => {
@@ -24,8 +36,8 @@ function Planet() {
     return (
         <PlanetLayout>
             <CenterPlanet />
-            <Orbit>
-                <CenterText>
+            <Orbit ref={orbit}>
+                <CenterText ref={centerText}>
                     {keyword}
                 </CenterText>
                 <FirstPlanet
